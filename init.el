@@ -12,20 +12,24 @@
       (url-retrieve-synchronously
        "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
     (goto-char (point-max))
-    (eval-print-last-sexp)
+    (eval-print-last-sexp)))
 
-    ;; refresh local el-get index of packages
-    (el-get-emacswiki-refresh el-get-recipe-path-emacswiki)
-    (el-get-elpa-build-local-recipes)))
+;; refresh local el-get index of packages every once in a while
+;(el-get-emacswiki-refresh el-get-recipe-path-emacswiki)
+;(el-get-elpa-build-local-recipes)
 
 ; load custom recipes
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
 ; list of recipes, packages, and libraries to install/load
-(setq recipes '(cider))
+;(setq recipes '(cider))
+
+; initilize package.el
+(package-initialize)
 
 ; download and initialize recipes/packages/libraries
-(el-get 'sync recipes)
+;(el-get 'sync recipes)
+(el-get 'sync)
 
 ;; set Clojure extensions
 (setq auto-mode-alist (cons '("\\.edn$" . clojure-mode) auto-mode-alist))  ; *.edn are Clojure files
