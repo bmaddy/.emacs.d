@@ -19,7 +19,6 @@
 ;(el-get-elpa-build-local-recipes)
 
 ; load custom recipes
-;(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (add-to-list 'el-get-recipe-path    "~/.emacs.d/recipes")
 
 ; list of recipes, packages, and libraries to install/load
@@ -31,14 +30,10 @@
 
 ; download and initialize recipes/packages/libraries
 (el-get 'sync recipes)
-;(el-get 'sync '(nrepl))
 
 ;; set Clojure extensions
 (setq auto-mode-alist (cons '("\\.edn$" . clojure-mode) auto-mode-alist))  ; *.edn are Clojure files
 (setq auto-mode-alist (cons '("\\.cljs$" . clojure-mode) auto-mode-alist)) ; *.cljs are Clojure files
 
 ;(setq debug-on-error t)
-
-;(load-file "~/.emacs.d/clojure-starter-kit-init.el")
-;(load-file "~/.emacs.d/clojure-starter-kit.el")
 
