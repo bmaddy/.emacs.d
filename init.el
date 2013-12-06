@@ -23,7 +23,8 @@
 (add-to-list 'el-get-recipe-path    "~/.emacs.d/recipes")
 
 ; list of recipes, packages, and libraries to install/load
-(setq recipes '(cider))
+(setq recipes '(cider
+		paredit))
 
 ; initilize package.el
 (package-initialize)
