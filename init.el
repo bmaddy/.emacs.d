@@ -14,22 +14,23 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
-;; refresh local el-get index of packages every once in a while
+;; TODO: refresh local el-get index of packages every once in a while
 ;(el-get-emacswiki-refresh el-get-recipe-path-emacswiki)
 ;(el-get-elpa-build-local-recipes)
 
 ; load custom recipes
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+;(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(add-to-list 'el-get-recipe-path    "~/.emacs.d/recipes")
 
 ; list of recipes, packages, and libraries to install/load
-;(setq recipes '(cider))
+(setq recipes '(cider))
 
 ; initilize package.el
 (package-initialize)
 
 ; download and initialize recipes/packages/libraries
-;(el-get 'sync recipes)
-(el-get 'sync)
+(el-get 'sync recipes)
+;(el-get 'sync '(nrepl))
 
 ;; set Clojure extensions
 (setq auto-mode-alist (cons '("\\.edn$" . clojure-mode) auto-mode-alist))  ; *.edn are Clojure files
