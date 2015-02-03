@@ -23,13 +23,27 @@
 
 ; list of recipes, packages, and libraries to install/load
 (setq recipes '(cider
-		paredit))
+		paredit
+    projectile
+    fiplr
+    js2-mode
+    ac-js2
+    company-mode))
 
 ; initilize package.el
 (package-initialize)
 
 ; download and initialize recipes/packages/libraries
 (el-get 'sync recipes)
+
+;; always show line numbers
+(global-linum-mode t)
+
+;; turn on projectile
+(projectile-global-mode)
+
+;; soft tabs
+(setq-default indent-tabs-mode nil)
 
 ;; set Clojure extensions
 (setq auto-mode-alist (cons '("\\.edn$" . clojure-mode) auto-mode-alist))  ; *.edn are Clojure files
