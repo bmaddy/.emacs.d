@@ -49,5 +49,8 @@
 (setq auto-mode-alist (cons '("\\.edn$" . clojure-mode) auto-mode-alist))  ; *.edn are Clojure files
 (setq auto-mode-alist (cons '("\\.cljs$" . clojure-mode) auto-mode-alist)) ; *.cljs are Clojure files
 
+;; append to exec-path so we can find lein when launched from Apple's Spotlight
+(setq exec-path (append exec-path '("/usr/local/bin")))
+
 ;(setq debug-on-error t)
 
