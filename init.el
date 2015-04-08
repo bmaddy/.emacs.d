@@ -28,7 +28,8 @@
     fiplr
     js2-mode
     ac-js2
-    company-mode))
+    ;company-mode
+    ))
 
 ; initilize package.el
 (package-initialize)
@@ -45,6 +46,9 @@
 ;; soft tabs
 (setq-default indent-tabs-mode nil)
 
+;; javascript tab-width
+(setq js-indent-level 2)
+
 ;; set Clojure extensions
 (setq auto-mode-alist (cons '("\\.edn$" . clojure-mode) auto-mode-alist))  ; *.edn are Clojure files
 (setq auto-mode-alist (cons '("\\.cljs$" . clojure-mode) auto-mode-alist)) ; *.cljs are Clojure files
@@ -52,5 +56,11 @@
 ;; append to exec-path so we can find lein when launched from Apple's Spotlight
 (setq exec-path (append exec-path '("/usr/local/bin")))
 
-;(setq debug-on-error t)
+;; make aquamacs stop asking if you want to save options that were changed by this file
+;;(custom-set-variables '(aquamacs-save-options-on-quit nil))
+(setq aquamacs-save-options-on-quit nil)
 
+;; show trailing whitespace
+(setq-default show-trailing-whitespace t)
+
+;(setq debug-on-error t)
