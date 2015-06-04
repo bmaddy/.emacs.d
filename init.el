@@ -63,4 +63,9 @@
 ;; show trailing whitespace
 (setq-default show-trailing-whitespace t)
 
+;; turn on paredit mode for clojure files by default
+(require 'clojure-mode)
+(defun turn-on-paredit () (paredit-mode 1))
+(add-hook 'clojure-mode-hook 'turn-on-paredit)
+
 ;(setq debug-on-error t)
